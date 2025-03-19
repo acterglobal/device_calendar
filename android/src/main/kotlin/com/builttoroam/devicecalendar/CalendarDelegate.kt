@@ -589,7 +589,7 @@ class CalendarDelegate(binding: ActivityPluginBinding?, context: Context) :
     private fun buildEventContentValues(event: Event, calendarId: String): ContentValues {
         val values = ContentValues()
 
-        values.put(Events.ALL_DAY, if (event.eventAllDay) 1 else 0)
+        values.put(Events.ALL_DAY, event.eventAllDay)
         values.put(Events.DTSTART, event.eventStartDate!!)
         values.put(Events.EVENT_TIMEZONE, getTimeZone(event.eventStartTimeZone).id)
         values.put(Events.TITLE, event.eventTitle)
